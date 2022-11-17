@@ -2,25 +2,38 @@
 window.onscroll = function () {
   const header = document.querySelector("header");
   const fixedNav = header.offsetTop;
+  const toTop = document.querySelector("#to-top");
 
   if (window.pageYOffset > fixedNav) {
     header.classList.add("navbar-fixed");
+    toTop.classList.remove("hidden");
+    toTop.classList.add("flex");
   } else {
     header.classList.remove("navbar-fixed");
+    toTop.classList.remove("flex");
+    toTop.classList.add("hidden");
   }
 };
 
 // Hamburger
 const hamburger = document.querySelector("#hamburger");
 const navMenu = document.querySelector("#nav-menu");
+const body = document.querySelector("#body");
 
 hamburger.addEventListener("click", function () {
   hamburger.classList.toggle("hamburger-active");
   navMenu.classList.toggle("hidden");
 });
 
-// Contact Form
+// Click outside hamburger
+// body.addEventListener("click", (e) => {
+//   if (e.target != hamburger && e.target != navMenu) {
+//     hamburger.classList.remove("hamburger-active");
+//     navMenu.classList.add("hidden");
+//   }
+// });
 
+// Contact Form
 const scriptURL = "https://script.google.com/macros/s/AKfycbxP0Bx0FVlXts2gGzc65qJ4xPHlM-8tirFLozU4ztVBnR447psM3T_i1x4iMCfvDj-J/exec";
 const form = document.forms["contact-form"];
 const btnSend = document.querySelector(".btn-send");
@@ -55,3 +68,24 @@ form.addEventListener("submit", (e) => {
 closeButton.addEventListener("click", () => {
   alertMessage.classList.toggle("hidden");
 });
+
+// Dark Mode Toggle
+const darkToggle = document.querySelector("#dark-toggle");
+const html = document.querySelector("html");
+
+darkToggle.addEventListener("click", () => {
+  if (darkToggle.checked) {
+    html.classList.add("dark");
+    localStorage.theme = "dark";
+  } else {
+    html.classList.remove("dark");
+    localStorage.theme = "light";
+  }
+});
+
+//Lock Toggle based on mode
+if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+  darkToggle.checked = true;
+} else {
+  darkToggle.checked = false;
+}

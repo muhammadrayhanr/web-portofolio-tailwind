@@ -6,34 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portofolio | Rayhan</title>
     <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="icon" href="https://res.cloudinary.com/dvlmnhdlf/image/upload/v1668703265/Foto/logo-website.png" />
+    <script>
+      if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
-  <body>
+  <body id="body">
     <!-- Header Start -->
-    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+    <header class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent">
       <div class="container">
-        <div class="flex items-center justify-between relative">
+        <div class="relative flex items-center justify-between">
           <div class="px-4">
-            <a href="#home" class="font-bold text-lg text-primary block py-6">Rayhan</a>
+            <a href="#home" class="block py-6 text-lg font-bold text-primary">
+              <img class="w-1/4" src="https://res.cloudinary.com/dvlmnhdlf/image/upload/v1668703265/Foto/logo-website.png" alt="Logo" />
+            </a>
           </div>
           <div class="flex items-center px-4">
-            <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
+            <button id="hamburger" name="hamburger" type="button" class="absolute right-4 mr-1 block lg:hidden">
               <span class="hamburger-line origin-top-left"></span>
               <span class="hamburger-line"></span>
               <span class="hamburger-line origin-bottom-left"></span>
             </button>
-            <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+            <nav
+              id="nav-menu"
+              class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark dark:shadow-slate-600 lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none dark:lg:bg-transparent"
+            >
               <ul class="block lg:flex">
                 <li class="group">
-                  <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Home</a>
+                  <a href="#home" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Home</a>
                 </li>
                 <li class="group">
-                  <a href="#about" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">About</a>
+                  <a href="#about" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">About</a>
                 </li>
                 <li class="group">
-                  <a href="#portofolio" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Portofolio</a>
+                  <a href="#portofolio" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Portofolio</a>
                 </li>
                 <li class="group">
-                  <a href="#contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Contact</a>
+                  <a href="#contact" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Contact</a>
+                </li>
+                <li class="mt-3 flex items-center pl-8 lg:mt-0">
+                  <div class="flex">
+                    <span class="mr-2 text-sm text-slate-500">Light</span>
+                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                    <label for="dark-toggle">
+                      <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500">
+                        <div class="toggle-circle h-5 w-5 rounded-full bg-white transition duration-300 ease-in-out"></div>
+                      </div>
+                    </label>
+                    <span class="ml-2 text-sm text-slate-500">Dark</span>
+                  </div>
                 </li>
               </ul>
             </nav>
@@ -44,25 +69,27 @@
     <!-- Header End -->
 
     <!-- Hero Section Start -->
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-28 dark:bg-dark">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full self-center px-4 lg:w-1/2">
-            <h1 class="text-base font-semibold text-primary md:text-xl">Hi👋 I'm <span class="block font-bold text-dark text-2xl mt-1 lg:text-4xl">M. Rayhan Rohadi</span></h1>
-            <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">Student & <span class="text-dark">Front-End Web Beginner</span></h2>
-            <p class="font-medium text-slate-600 mb-10 leading-relaxed">
+            <h1 class="text-base font-semibold text-primary dark:text-white md:text-xl">Hi👋 I'm <span class="mt-1 block text-2xl font-bold text-dark dark:text-white lg:text-4xl">M. Rayhan Rohadi</span></h1>
+            <h2 class="mb-5 text-lg font-medium text-secondary lg:text-2xl">Student & <span class="text-dark dark:text-white">Front-End Web Beginner</span></h2>
+            <p class="mb-10 font-medium leading-relaxed text-slate-600">
               <strong>From beginner to expert</strong>. I am a front-end web beginner who enjoy design and develop website. I'm still studying basic to intermediate and will continue to study until expert.
             </p>
-            <a href="https://linkray.netlify.app/" target="_blank" class="animate-pulse text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Find more about me.</a>
+            <a href="https://linkray.netlify.app/" target="_blank" class="animate-pulse rounded-full bg-primary py-3 px-4 text-xs font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg md:text-base"
+              >Find more about me.</a
+            >
           </div>
           <div class="w-full self-end px-4 lg:w-1/2">
-            <div class="mt-10 relative lg:mt-0 lg:right-0">
-              <img src="./dist/img/foto.png" alt="Rayhan" class="max-w-full mx-auto" width="320" height="320" />
-              <span class="absolute -bottom-0 -z-10 left-1/2 -translate-x-1/2"
-                ><svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="#14b8a6" d="M67.1,-23.5C75.8,5,64,38.4,39.7,56.5C15.4,74.6,-21.3,77.3,-44.3,60.6C-67.4,44,-76.6,8,-67,-21.8C-57.3,-51.6,-28.6,-75.2,0.3,-75.3C29.2,-75.4,58.4,-52,67.1,-23.5Z" transform="translate(100 100) scale(1.0)" />
+            <div class="relative mt-10 rounded-t-full rounded-b-3xl transition duration-500 max-[1022px]:bg-primary lg:right-0 lg:mt-0 lg:hover:bg-primary min-[1026px]:bg-white dark:min-[1026px]:bg-primary">
+              <img src="./dist/img/my-photo.png" alt="Rayhan" class="relative z-10 mx-auto max-w-full pt-8 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0" width="320" height="320" />
+              <!-- <span class="absolute -bottom-0 left-1/2 -translate-x-1/2">
+                <svg class="w-[350px] max-w-[400px]" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#fff" d="M67.1,-23.5C75.8,5,64,38.4,39.7,56.5C15.4,74.6,-21.3,77.3,-44.3,60.6C-67.4,44,-76.6,8,-67,-21.8C-57.3,-51.6,-28.6,-75.2,0.3,-75.3C29.2,-75.4,58.4,-52,67.1,-23.5Z" transform="translate(100 100) scale(1.0)" />
                 </svg>
-              </span>
+              </span> -->
             </div>
           </div>
         </div>
@@ -71,19 +98,19 @@
     <!-- Hero Section End -->
 
     <!-- About Section Start -->
-    <section id="about" class="pt-36 pb-32">
+    <section id="about" class="pt-28 pb-32 dark:bg-dark">
       <div class="container">
         <div class="flex flex-wrap">
-          <div class="w-full px-4 mb-10 lg:w-1/2">
-            <h4 class="font-bold uppercase text-primary text-lg mb-3">About Me</h4>
-            <h2 class="font-semibold text-dark text-2xl mb-3 max-w-md lg:text-3xl">Out of sight, out of mind.</h2>
-            <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">
+          <div class="mb-10 w-full px-4 lg:w-1/2">
+            <h4 class="mb-3 text-lg font-bold uppercase text-primary">About Me</h4>
+            <h2 class="mb-3 max-w-md text-2xl font-semibold text-dark dark:text-white lg:text-3xl">Out of sight, out of mind.</h2>
+            <p class="max-w-xl text-base font-medium text-secondary lg:text-lg">
               I'm Rayhan, a Front-End Web learner based in Indonesia. I've been interested in Web Development since February 2022. I'm looking for opportunities in Front-End Web Development.
             </p>
           </div>
           <div class="w-full px-4 lg:w-1/2">
-            <h3 class="font-semibold text-dark text-2xl mb-3 lg:text-3xl lg:pt-10">Let's connect!</h3>
-            <p class="font-medium text-base text-secondary mb-6 lg:text-lg">I have so many interest in web programming and technology, so I would love to invite you to my network 👇</p>
+            <h3 class="mb-3 text-2xl font-semibold text-dark dark:text-white lg:pt-10 lg:text-3xl">Let's connect!</h3>
+            <p class="mb-6 text-base font-medium text-secondary lg:text-lg">I have so many interest in web programming and technology, so I would love to invite you to my network 👇</p>
             <div class="flex items-center">
               <!-- Linkedin -->
               <a href="https://www.linkedin.com/in/mrayhanr4869" target="_blank" class="connect-button border-slate-300">
@@ -138,37 +165,37 @@
     <!-- About Section End -->
 
     <!-- Portofolio Section Start -->
-    <section id="portofolio" class="pt-36 pb-18 bg-slate-100">
+    <section id="portofolio" class="pb-18 bg-slate-100 pt-28 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
-          <div class="max-w-xl mx-auto text-center mb-16">
-            <h4 class="font-semibold uppercase text-lg text-primary mb-4">Portofolio</h4>
-            <h2 class="font-bold text-dark text-3xl mb-4">My Projects</h2>
+          <div class="mx-auto mb-16 max-w-xl text-center">
+            <h4 class="mb-4 text-lg font-semibold uppercase text-primary">Portofolio</h4>
+            <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white">My Projects</h2>
           </div>
         </div>
 
-        <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
+        <div class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12">
           <!-- Porto 1 -->
-          <div class="mb-12 p-4 rounded-lg md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
-              <img src="./dist/img/p1.png" alt="Project 1" width="w-full" />
+          <div class="mb-12 rounded-lg p-4 transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-700 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="./dist/img/p1.png" alt="Project 1" width="w-full" class="image-porto" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-5 text-center">Foodie Apps</h3>
-            <ul class="font-medium text-base text-secondary text-center">
+            <h3 class="mt-5 mb-5 text-center text-xl font-semibold text-dark dark:text-white">Foodie Apps</h3>
+            <ul class="text-center text-base font-medium text-secondary dark:text-slate-400">
               <li>Made with HTML, CSS, JS, and Dicoding API;</li>
               <li>Available for Progressive Web Apps;</li>
               <li>Clean architecture, automation testing;</li>
               <li>Dicoding Front-End Web Expert submission.</li>
             </ul>
             <div class="mt-7 mb-5 flex justify-center">
-              <a href="https://foodieapps.netlify.app/" class="preview-button">
+              <a href="https://foodieapps.netlify.app/" class="preview-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe-americas" viewBox="0 0 16 16">
                   <path
                     d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"
                   />
                 </svg>
               </a>
-              <a href="https://github.com/muhammadrayhanr/foodie-apps" class="source-button">
+              <a href="https://github.com/muhammadrayhanr/foodie-apps" class="source-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder2" viewBox="0 0 16 16">
                   <path
                     d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z"
@@ -178,26 +205,26 @@
             </div>
           </div>
           <!-- Porto 2 -->
-          <div class="mb-12 p-4 rounded-lg md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
-              <img src="./dist/img/p2.png" alt="Project 2" width="w-full" />
+          <div class="mb-12 rounded-lg p-4 transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-700 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="./dist/img/p2.png" alt="Project 2" width="w-full" class="image-porto" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-5 text-center">Movie Catalogue</h3>
-            <ul class="font-medium text-base text-secondary text-center">
+            <h3 class="mt-5 mb-5 text-center text-xl font-semibold text-dark dark:text-white">Movie Catalogue</h3>
+            <ul class="text-center text-base font-medium text-secondary dark:text-slate-400">
               <li>Made with HTML, CSS, JS, and MovieDB API;</li>
               <li>Available for Progressive Web Apps with notification;</li>
               <li>Clean architecture, automation testing;</li>
               <li>Dicoding Front-End Web Expert practice.</li>
             </ul>
             <div class="mt-7 mb-5 flex justify-center">
-              <a href="https://movie-catalogues.netlify.app/" class="preview-button">
+              <a href="https://movie-catalogues.netlify.app/" class="preview-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe-americas" viewBox="0 0 16 16">
                   <path
                     d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"
                   />
                 </svg>
               </a>
-              <a href="https://github.com/muhammadrayhanr/movie-catalogue" class="source-button">
+              <a href="https://github.com/muhammadrayhanr/movie-catalogue" class="source-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder2" viewBox="0 0 16 16">
                   <path
                     d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z"
@@ -207,26 +234,26 @@
             </div>
           </div>
           <!-- Porto 3 -->
-          <div class="mb-12 p-4 rounded-lg md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
-              <img src="./dist/img/p3.png" alt="Project 3" width="w-full" />
+          <div class="mb-12 rounded-lg p-4 transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-700 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="./dist/img/p3.png" alt="Project 3" width="w-full" class="image-porto" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-5 text-center">Bookshelf Apps</h3>
-            <ul class="font-medium text-base text-secondary text-center">
+            <h3 class="mt-5 mb-5 text-center text-xl font-semibold text-dark dark:text-white">Bookshelf Apps</h3>
+            <ul class="text-center text-base font-medium text-secondary dark:text-slate-400">
               <li>Made with HTML, CSS, and JS;</li>
               <li>CRUD features for book management;</li>
               <li>Based on DOM;</li>
               <li>Dicoding Front-End Web Beginner practice.</li>
             </ul>
             <div class="mt-7 mb-5 flex justify-center">
-              <a href="https://muhammadrayhanr.github.io/BookshelfApps/" class="preview-button">
+              <a href="https://muhammadrayhanr.github.io/BookshelfApps/" class="preview-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe-americas" viewBox="0 0 16 16">
                   <path
                     d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"
                   />
                 </svg>
               </a>
-              <a href="https://github.com/muhammadrayhanr/BookshelfApps" class="source-button">
+              <a href="https://github.com/muhammadrayhanr/BookshelfApps" class="source-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder2" viewBox="0 0 16 16">
                   <path
                     d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z"
@@ -236,26 +263,26 @@
             </div>
           </div>
           <!-- Porto 4 -->
-          <div class="mb-12 p-4 rounded-lg md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
-              <img src="./dist/img/p4.png" alt="Project 4" width="w-full" />
+          <div class="mb-12 rounded-lg p-4 transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-700 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="./dist/img/p4.png" alt="Project 4" width="w-full" class="image-porto" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-5 text-center">Foodie Index</h3>
-            <ul class="font-medium text-base text-secondary text-center">
+            <h3 class="mt-5 mb-5 text-center text-xl font-semibold text-dark dark:text-white">Foodie Index</h3>
+            <ul class="text-center text-base font-medium text-secondary dark:text-slate-400">
               <li>Made with HTML, CSS, JS, and Bootstrap;</li>
               <li>Search features for food recipes;</li>
               <li>Clean architecture and responsive;</li>
               <li>Dicoding Front-End Web Fundamental practice.</li>
             </ul>
             <div class="mt-7 mb-5 flex justify-center">
-              <a href="https://muhammadrayhanr.github.io/FoodieIndex/" class="preview-button">
+              <a href="https://muhammadrayhanr.github.io/FoodieIndex/" class="preview-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe-americas" viewBox="0 0 16 16">
                   <path
                     d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"
                   />
                 </svg>
               </a>
-              <a href="https://github.com/muhammadrayhanr/FoodieIndex" class="source-button">
+              <a href="https://github.com/muhammadrayhanr/FoodieIndex" class="source-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder2" viewBox="0 0 16 16">
                   <path
                     d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z"
@@ -265,26 +292,26 @@
             </div>
           </div>
           <!-- Porto 5 -->
-          <div class="mb-12 p-4 rounded-lg md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
-              <img src="./dist/img/p5.png" alt="Project 5" width="w-full" />
+          <div class="mb-12 rounded-lg p-4 transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-700 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="./dist/img/p5.png" alt="Project 5" width="w-full" class="image-porto" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-5 text-center">Historic Calculator</h3>
-            <ul class="font-medium text-base text-secondary text-center">
+            <h3 class="mt-5 mb-5 text-center text-xl font-semibold text-dark dark:text-white">Historic Calculator</h3>
+            <ul class="text-center text-base font-medium text-secondary dark:text-slate-400">
               <li>Made with HTML, CSS, and JS;</li>
               <li>Simple calculator with history;</li>
               <li>Clean architecture and responsive;</li>
               <li>Dicoding Front-End Web Basic practice.</li>
             </ul>
             <div class="mt-7 mb-5 flex justify-center">
-              <a href="https://muhammadrayhanr.github.io/historical-calculator/" class="preview-button">
+              <a href="https://muhammadrayhanr.github.io/historical-calculator/" class="preview-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe-americas" viewBox="0 0 16 16">
                   <path
                     d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"
                   />
                 </svg>
               </a>
-              <a href="https://github.com/muhammadrayhanr/historical-calculator" class="source-button">
+              <a href="https://github.com/muhammadrayhanr/historical-calculator" class="source-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder2" viewBox="0 0 16 16">
                   <path
                     d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z"
@@ -294,26 +321,26 @@
             </div>
           </div>
           <!-- Porto 6 -->
-          <div class="mb-12 p-4 rounded-lg md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
-              <img src="./dist/img/p6.png" alt="Project 6" width="w-full" />
+          <div class="mb-12 rounded-lg p-4 transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-700 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="./dist/img/p6.png" alt="Project 6" width="w-full" class="image-porto" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-5 text-center">Simple Calculator</h3>
-            <ul class="font-medium text-base text-secondary text-center">
+            <h3 class="mt-5 mb-5 text-center text-xl font-semibold text-dark dark:text-white">Simple Calculator</h3>
+            <ul class="text-center text-base font-medium text-secondary dark:text-slate-400">
               <li>Made with HTML, CSS, and JS;</li>
               <li>Simple calculator;</li>
               <li>Clean architecture and responsive;</li>
               <li>Progate X Kominfo Front-End Web Bootcamp individual capstone.</li>
             </ul>
             <div class="mt-7 mb-5 flex justify-center">
-              <a href="https://muhammadrayhanr.github.io/simple-calculator/" class="preview-button">
+              <a href="https://muhammadrayhanr.github.io/simple-calculator/" class="preview-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe-americas" viewBox="0 0 16 16">
                   <path
                     d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"
                   />
                 </svg>
               </a>
-              <a href="https://github.com/muhammadrayhanr/simple-calculator" class="source-button">
+              <a href="https://github.com/muhammadrayhanr/simple-calculator" class="source-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder2" viewBox="0 0 16 16">
                   <path
                     d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z"
@@ -323,26 +350,26 @@
             </div>
           </div>
           <!-- Porto 7 -->
-          <div class="mb-12 p-4 rounded-lg md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
-              <img src="./dist/img/p7.png" alt="Project 7" width="w-full" />
+          <div class="mb-12 rounded-lg p-4 transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-700 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="./dist/img/p7.png" alt="Project 7" width="w-full" class="image-porto" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-5 text-center">Cryptomaniac</h3>
-            <ul class="font-medium text-base text-secondary text-center">
+            <h3 class="mt-5 mb-5 text-center text-xl font-semibold text-dark dark:text-white">Cryptomaniac</h3>
+            <ul class="text-center text-base font-medium text-secondary dark:text-slate-400">
               <li>Made with HTML, CSS, and JS;</li>
               <li>Crypto prices and marketplaces info;</li>
               <li>Clean architecture and responsive;</li>
               <li>Dicoding Front-End Web Basic submission.</li>
             </ul>
             <div class="mt-7 mb-5 flex justify-center">
-              <a href="https://muhammadrayhanr.github.io/CryptoManiac/" class="preview-button">
+              <a href="https://muhammadrayhanr.github.io/CryptoManiac/" class="preview-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe-americas" viewBox="0 0 16 16">
                   <path
                     d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"
                   />
                 </svg>
               </a>
-              <a href="https://github.com/muhammadrayhanr/CryptoManiac" class="source-button">
+              <a href="https://github.com/muhammadrayhanr/CryptoManiac" class="source-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder2" viewBox="0 0 16 16">
                   <path
                     d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z"
@@ -352,26 +379,26 @@
             </div>
           </div>
           <!-- Porto 8 -->
-          <div class="mb-12 p-4 rounded-lg md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
-              <img src="./dist/img/p8.png" alt="Project 8" width="w-full" />
+          <div class="mb-12 rounded-lg p-4 transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-700 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="./dist/img/p8.png" alt="Project 8" width="w-full" class="image-porto" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-5 text-center">Florist Shop</h3>
-            <ul class="font-medium text-base text-secondary text-center">
+            <h3 class="mt-5 mb-5 text-center text-xl font-semibold text-dark dark:text-white">Florist Shop</h3>
+            <ul class="text-center text-base font-medium text-secondary dark:text-slate-400">
               <li>Made with HTML, CSS, and JS;</li>
               <li>Static website about flower shop;</li>
               <li>Clean architecture and responsive;</li>
               <li>Progate X Kominfo Front-End Web Bootcamp team capstone.</li>
             </ul>
             <div class="mt-7 mb-5 flex justify-center">
-              <a href="https://muhammadrayhanr.github.io/florist-shop/" class="preview-button">
+              <a href="https://muhammadrayhanr.github.io/florist-shop/" class="preview-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe-americas" viewBox="0 0 16 16">
                   <path
                     d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"
                   />
                 </svg>
               </a>
-              <a href="https://github.com/muhammadrayhanr/florist-shop" class="source-button">
+              <a href="https://github.com/muhammadrayhanr/florist-shop" class="source-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder2" viewBox="0 0 16 16">
                   <path
                     d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z"
@@ -381,26 +408,26 @@
             </div>
           </div>
           <!-- Porto 9 -->
-          <div class="mb-12 p-4 rounded-lg md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
-              <img src="./dist/img/p9.png" alt="Project 9" width="w-full" />
+          <div class="mb-12 rounded-lg p-4 transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-700 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="./dist/img/p9.png" alt="Project 9" width="w-full" class="image-porto" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-5 text-center">Linktree Clone</h3>
-            <ul class="font-medium text-base text-secondary text-center">
+            <h3 class="mt-5 mb-5 text-center text-xl font-semibold text-dark dark:text-white">Linktree Clone</h3>
+            <ul class="text-center text-base font-medium text-secondary dark:text-slate-400">
               <li>Made with HTML, CSS, and JS;</li>
               <li>Linktree clone for personal use;</li>
               <li>Clean architecture and responsive;</li>
-              <li>Self study for improvement.</li>
+              <li>Self study for CSS skill improvement.</li>
             </ul>
             <div class="mt-7 mb-5 flex justify-center">
-              <a href="https://linkray.netlify.app/" class="preview-button">
+              <a href="https://linkray.netlify.app/" class="preview-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe-americas" viewBox="0 0 16 16">
                   <path
                     d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"
                   />
                 </svg>
               </a>
-              <a href="https://github.com/muhammadrayhanr/linktree-clone" class="source-button">
+              <a href="https://github.com/muhammadrayhanr/linktree-clone" class="source-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder2" viewBox="0 0 16 16">
                   <path
                     d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z"
@@ -410,26 +437,26 @@
             </div>
           </div>
           <!-- Porto 10 -->
-          <div class="mb-12 p-4 rounded-lg md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
-              <img src="./dist/img/p10.png" alt="Project 10" width="w-full" />
+          <div class="mb-12 rounded-lg p-4 transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-700 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="./dist/img/p10.png" alt="Project 10" width="w-full" class="image-porto" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-5 text-center">Personal Website</h3>
-            <ul class="font-medium text-base text-secondary text-center">
+            <h3 class="mt-5 mb-5 text-center text-xl font-semibold text-dark dark:text-white">Personal Website</h3>
+            <ul class="text-center text-base font-medium text-secondary dark:text-slate-400">
               <li>Made with HTML, CSS, JS and Bootstrap;</li>
               <li>My first personal website;</li>
               <li>Clean architecture and responsive;</li>
-              <li>Self study for skill improvement.</li>
+              <li>Self study for Bootstrap skill improvement.</li>
             </ul>
             <div class="mt-7 mb-5 flex justify-center">
-              <a href="https://rayhan-web.netlify.app/" class="preview-button">
+              <a href="https://rayhan-web.netlify.app/" class="preview-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe-americas" viewBox="0 0 16 16">
                   <path
                     d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"
                   />
                 </svg>
               </a>
-              <a href="#" class="source-button">
+              <a href="https://github.com/muhammadrayhanr/portofolio-website" class="source-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder2" viewBox="0 0 16 16">
                   <path
                     d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z"
@@ -438,13 +465,18 @@
               </a>
             </div>
           </div>
-
-          <div class="mb-12 p-4 rounded-lg md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
-              <img src="./dist/img/p11.png" alt="Project 11" width="w-full" />
+          <!-- Porto 11 -->
+          <div class="mb-12 rounded-lg p-4 transition duration-300 hover:bg-slate-200 dark:hover:bg-slate-700 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="./dist/img/p11.png" alt="Project 11" width="w-full" class="image-porto" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-5 text-center">This Website</h3>
-            <p class="font-medium text-base text-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id rem quo consequuntur accusamus provident dolorem, sapiente placeat reiciendis incidunt itaque?</p>
+            <h3 class="mt-5 mb-5 text-center text-xl font-semibold text-dark dark:text-white">This Website</h3>
+            <ul class="text-center text-base font-medium text-secondary dark:text-slate-400">
+              <li>Made with HTML, CSS, JS and TailwindCSS;</li>
+              <li>My second personal website;</li>
+              <li>Clean architecture and responsive;</li>
+              <li>Self study for TailwindCSS skill improvement.</li>
+            </ul>
             <div class="mt-7 mb-5 flex justify-center">
               <a href="#" class="preview-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe-americas" viewBox="0 0 16 16">
@@ -453,7 +485,7 @@
                   />
                 </svg>
               </a>
-              <a href="#" class="source-button">
+              <a href="https://github.com/muhammadrayhanr/web-portofolio-tailwind" class="source-button" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder2" viewBox="0 0 16 16">
                   <path
                     d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z"
@@ -468,37 +500,37 @@
     <!-- Portofolio Section End -->
 
     <!-- Contact Section Start -->
-    <section id="contact" class="pt-36 pb-32">
+    <section id="contact" class="pt-28 pb-32 dark:bg-dark">
       <div class="container">
         <div class="w-full px-4">
-          <div class="max-w-xl mx-auto text-center mb-16">
-            <h4 class="font-semibold text-lg text-primary mb-2">FORM</h4>
-            <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Contact me</h2>
+          <div class="mx-auto mb-16 max-w-xl text-center">
+            <h4 class="mb-2 text-lg font-semibold text-primary">FORM</h4>
+            <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">Contact me</h2>
           </div>
         </div>
 
         <form name="contact-form">
-          <div class="w-full lg:w-2/3 lg:mx-auto">
-            <div class="w-full px-4 mb-8 bg-teal-400 rounded-2xl p-2 text-center alert-message relative hidden">
-              <button type="button" class="flex -right-2 -top-4 bg-white text-xs font-semibold p-1 border-2 alert-message rounded-full close-button absolute hover:bg-slate-200 transition duration-300">✖️</button>
-              <p class="font-semibold text-white animate-pulse">Your message has been received.</p>
+          <div class="w-full lg:mx-auto lg:w-2/3">
+            <div class="alert-message relative mb-8 hidden w-full rounded-2xl bg-teal-400 p-2 px-4 text-center">
+              <button type="button" class="alert-message close-button absolute -right-2 -top-4 flex rounded-full border-2 bg-white p-1 text-xs font-semibold transition duration-300 hover:bg-slate-200">✖️</button>
+              <p class="animate-pulse font-semibold text-white">Your message has been received.</p>
             </div>
-            <div class="w-full px-4 mb-8">
-              <label for="name" class="text-base text-primary font-semibold">Name</label>
-              <input type="text" name="name" id="name" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+            <div class="mb-8 w-full px-4">
+              <label for="name" class="text-base font-semibold text-primary">Name</label>
+              <input type="text" name="name" id="name" class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
             </div>
-            <div class="w-full px-4 mb-8">
-              <label for="email" class="text-base text-primary font-semibold">Email</label>
-              <input type="email" name="email" id="email" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+            <div class="mb-8 w-full px-4">
+              <label for="email" class="text-base font-semibold text-primary">Email</label>
+              <input type="email" name="email" id="email" class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
             </div>
-            <div class="w-full px-4 mb-8">
-              <label for="message" class="text-base text-primary font-semibold">Message</label>
-              <textarea name="message" id="message" class="w-full h-32 bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"></textarea>
+            <div class="mb-8 w-full px-4">
+              <label for="message" class="text-base font-semibold text-primary">Message</label>
+              <textarea name="message" id="message" class="h-32 w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"></textarea>
             </div>
             <div class="w-full px-4">
               <button class="button-contact btn-send" type="submit">Send</button>
               <button class="button-contact btn-loading hidden">
-                <svg class="inline mr-2 w-6 h-6 text-gray-200 animate-spin dark:text-gray-600 fill-white" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="mr-2 inline h-6 w-6 animate-spin fill-white text-gray-200 dark:text-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
                     fill="currentColor"
@@ -518,10 +550,10 @@
     <!-- Contact Section End -->
 
     <!-- Footer Start -->
-    <footer class="bg-dark pb-6">
+    <footer class="bg-dark pb-6 dark:bg-slate-800">
       <div class="container">
         <div class="w-full pt-10">
-          <div class="flex items-center justify-center mb-5">
+          <div class="mb-5 flex items-center justify-center">
             <!-- Linkedin -->
             <a href="https://www.linkedin.com/in/mrayhanr4869" target="_blank" class="connect-button border-slate-600">
               <svg width="20" role="img" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -568,11 +600,17 @@
               </svg>
             </a>
           </div>
-          <p class="font-medium text-sm text-slate-500 text-center">Made with ❤️ by <a href="https://www.instagram.com/mrayhanrohadi/" target="_blank" class="text-bold text-primary">Rayhan</a> &#169; 2022</p>
+          <p class="text-center text-sm font-medium text-slate-500">Made with ❤️ by <a href="https://www.instagram.com/mrayhanrohadi/" target="_blank" class="text-bold text-primary">Rayhan</a> &#169; 2022</p>
         </div>
       </div>
     </footer>
     <!-- Footer End -->
+
+    <!-- Back To Top Start -->
+    <a href="#home" id="to-top" class="fixed bottom-5 right-5 z-[9999] hidden h-11 w-11 items-center justify-center rounded-full bg-transparent bg-primary p-4">
+      <span class="mt-1 block h-3 w-3 rotate-45 border-t-2 border-l-2 hover:animate-pulse"></span>
+    </a>
+    <!-- Back To Top End -->
 
     <script src="./dist/js/script.js"></script>
   </body>

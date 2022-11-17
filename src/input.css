@@ -6,14 +6,18 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+.image-porto {
+  @apply grayscale transition duration-300 hover:scale-125 hover:grayscale-0;
+}
+
 .navbar-fixed {
-  @apply fixed z-[9999] bg-white bg-opacity-70;
-  backdrop-filter: blur(5px);
+  @apply fixed z-[9999] bg-white bg-opacity-70 backdrop-blur-sm dark:bg-dark dark:bg-opacity-50;
+
   box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
 }
 
 .hamburger-line {
-  @apply w-[30px] h-[2px] my-2 block bg-dark transition duration-300 ease-in-out;
+  @apply my-2 block h-[2px] w-[30px] bg-dark transition duration-300 ease-in-out dark:bg-white;
 }
 
 .hamburger-active > span:nth-child(1) {
@@ -29,17 +33,21 @@ body {
 }
 
 .connect-button {
-  @apply w-9 h-9 mr-3 rounded-full text-slate-300 flex justify-center items-center border  hover:border-primary hover:bg-primary hover:text-white hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out;
+  @apply mr-3 flex h-9 w-9 items-center justify-center rounded-full border text-slate-300  transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white hover:opacity-80 hover:shadow-lg;
 }
 
 .preview-button {
-  @apply p-2 mr-3 text-secondary border-2 rounded-full hover:text-white hover:bg-primary hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out;
+  @apply mr-3 rounded-full border-2 p-2 text-secondary transition duration-300 ease-in-out hover:bg-primary hover:text-white hover:opacity-80 hover:shadow-lg dark:border-slate-700;
 }
 
 .source-button {
-  @apply p-2 ml-3 text-secondary border-2 rounded-full hover:text-white hover:bg-primary hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out;
+  @apply ml-3 rounded-full border-2 p-2 text-secondary transition duration-300 ease-in-out hover:bg-primary hover:text-white hover:opacity-80 hover:shadow-lg dark:border-slate-700;
 }
 
 .button-contact {
-  @apply text-base w-full font-semibold text-white bg-primary py-3 px-8 rounded-full hover:opacity-80 hover:shadow-lg transition duration-500;
+  @apply w-full rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-500 hover:opacity-80 hover:shadow-lg;
+}
+
+#dark-toggle:checked ~ label div.toggle-circle {
+  @apply translate-x-4;
 }
