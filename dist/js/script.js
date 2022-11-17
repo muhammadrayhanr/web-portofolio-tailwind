@@ -26,12 +26,12 @@ hamburger.addEventListener("click", function () {
 });
 
 // Click outside hamburger
-// body.addEventListener("click", (e) => {
-//   if (e.target != hamburger && e.target != navMenu) {
-//     hamburger.classList.remove("hamburger-active");
-//     navMenu.classList.add("hidden");
-//   }
-// });
+body.addEventListener("click", (e) => {
+  if (e.target != hamburger && e.target != navMenu) {
+    hamburger.classList.remove("hamburger-active");
+    navMenu.classList.add("hidden");
+  }
+});
 
 // Contact Form
 const scriptURL = "https://script.google.com/macros/s/AKfycbxP0Bx0FVlXts2gGzc65qJ4xPHlM-8tirFLozU4ztVBnR447psM3T_i1x4iMCfvDj-J/exec";
