@@ -72,14 +72,30 @@ closeButton.addEventListener("click", () => {
 // Dark Mode Toggle
 const darkToggle = document.querySelector("#dark-toggle");
 const html = document.querySelector("html");
+const logoLight = document.querySelector(".logo-light");
+const logoDark = document.querySelector(".logo-dark");
+
+if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+  document.documentElement.classList.add("dark");
+  logoLight.classList.add("hidden");
+  logoDark.classList.remove("hidden");
+} else {
+  document.documentElement.classList.remove("dark");
+  logoLight.classList.remove("hidden");
+  logoDark.classList.add("hidden");
+}
 
 darkToggle.addEventListener("click", () => {
   if (darkToggle.checked) {
     html.classList.add("dark");
     localStorage.theme = "dark";
+    logoLight.classList.add("hidden");
+    logoDark.classList.remove("hidden");
   } else {
     html.classList.remove("dark");
     localStorage.theme = "light";
+    logoLight.classList.remove("hidden");
+    logoDark.classList.add("hidden");
   }
 });
 
